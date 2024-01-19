@@ -21,6 +21,23 @@ $('.menu-humb').on('click', function () {
   $('.header__wrap').toggleClass('menu_active');
   $('.header-icons__wrap').toggleClass('icons-hidden')
 });
+ // второе мобильное меню (правое)
+$('.profile-info__more').on('click', function () {
+ /*  $(this).toggleClass('active'); */
+  $('.evens-menu-mob').addClass('active');
+  /* $('.header__wrap').toggleClass('menu_active');
+  $('.header-icons__wrap').toggleClass('icons-hidden') */
 });
+$('.right-menu__close').on('click', function () {
+  $('.evens-menu-mob').removeClass('active');
+});
+$(document).on('click', function (e) {
+if (!$(e.target).closest(".right-menu__close, .evens-menu-mob, .profile-info__more").length) {
+  $('.evens-menu-mob').removeClass('active');
+}
+e.stopPropagation();
+});
+});
+
 
 
