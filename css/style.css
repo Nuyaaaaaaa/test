@@ -2,8 +2,9 @@
     margin: 0;
     padding: 0;
 }
+
 /*Старые стили*/
- /*
+/*
  @font-face {
     font-family: 'Gilroy-Medium';
     src: url('./fonts/gilroy-medium.eot');
@@ -102,6 +103,8 @@ body {
     --gray-800: #353535;
     --soft-purple: #E7D3FF;
     --gray-600: #666;
+    --soft-blue: #CFF3FE;
+    --soft-orange: #FFE6D3;
 }
 
 h2 {
@@ -157,7 +160,7 @@ input[type="search"]::-webkit-search-results-decoration {
 
 .header {
     background-color: rgba(18, 18, 18, 1);
-    padding: 14px 0;
+    padding: 16px 0;
 }
 
 .menu-humb__wrap {
@@ -274,7 +277,7 @@ input[type="search"]::-webkit-search-results-decoration {
     color: var(--main-white);
     font-size: 14px;
     font-weight: 500;
-    line-height: 18px; 
+    line-height: 18px;
 }
 
 .header-logo__link {
@@ -482,7 +485,7 @@ input[type="search"]::-webkit-search-results-decoration {
     font-size: 14px;
     font-weight: 500;
     line-height: 18px;
-    padding-bottom: 12px;
+    padding: 12px 16px;
     width: 100%;
     height: auto;
 }
@@ -631,7 +634,7 @@ input[type="search"]::-webkit-search-results-decoration {
 .directions-top__menu {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: end;
     margin-bottom: 24px;
 }
 
@@ -786,13 +789,13 @@ section {
     color: var(--main-black);
     font-size: 14px;
     font-weight: 500;
-    line-height: 18px; 
+    line-height: 18px;
     white-space: nowrap;
 }
 
 .left-menu__block {
     display: grid;
-    margin-bottom: 2px;
+    gap: 2px;
     width: 100%;
 }
 
@@ -843,7 +846,7 @@ section {
     font-weight: 500;
     line-height: 18px;
     color: var(--main-accent);
-    
+
 
 }
 
@@ -854,8 +857,8 @@ section {
 }
 
 
-.slider {
-    margin-bottom: 60px;
+.slider-section {
+    margin-bottom: 42px;
 }
 
 .slider-bannerMain {
@@ -1040,7 +1043,7 @@ section {
     color: var(--main-white);
     font-size: 14px;
     font-weight: 500;
-    line-height: 18px; 
+    line-height: 18px;
 }
 
 .profile-info__mainPhoto {
@@ -1056,7 +1059,7 @@ section {
 
 .main-info__change-page {
     display: flex;
-    
+
     gap: 10px;
 }
 
@@ -1073,7 +1076,7 @@ section {
     color: var(--main-black);
     font-size: 14px;
     font-weight: 500;
-    line-height: 18px; 
+    line-height: 18px;
 }
 
 .main-info__change-button.active {
@@ -1093,7 +1096,7 @@ section {
     font-size: 14px;
     font-weight: 500;
     line-height: 18px;
-    padding-bottom: 12px;
+    padding: 12px 16px;
     width: 100%;
     height: auto;
     white-space: nowrap;
@@ -1288,9 +1291,21 @@ section {
 
 
 
-.steps__svg {
+.steps__svgOne {
     padding: 10px;
     background: var(--soft-purple);
+    border-radius: 6px;
+}
+
+.steps__svgTwo {
+    padding: 10px;
+    background: var(--soft-blue);
+    border-radius: 6px;
+}
+
+.steps__svgThree {
+    padding: 10px;
+    background: var(--soft-orange);
     border-radius: 6px;
 }
 
@@ -1481,6 +1496,7 @@ section {
 
     .left-menu__wrap {
         position: static;
+        gap: 24px;
     }
 
     .left-menu {
@@ -1653,6 +1669,10 @@ section {
 @media screen and (max-width: 767px) {
     .directions__button {
         display: none;
+    }
+
+    .directions-top__block {
+        width: 46px;
     }
 
     .directions-top__block svg {
