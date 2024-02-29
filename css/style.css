@@ -105,6 +105,7 @@ body {
     --gray-600: #666;
     --soft-blue: #CFF3FE;
     --soft-orange: #FFE6D3;
+    --main-red: #E01935;
 }
 
 h2 {
@@ -1815,17 +1816,60 @@ section {
 
 .popup {
     display: none;
+    position: relative;
+    height: 100%;
+
 }
 
-.popup-authorization__form {
-    padding: 12px 32px 32px 32px;
-    position: relative;
+.popup.active {
+    background-color: rgba(0, 0, 0, 0.3);
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 100;
+    display: none;
 }
+
+
+
+.popup-authorization__form {
+    padding: 40px 32px 32px 32px;
+    position: relative;
+    background-color: var(--main-white);
+    border-radius: 8px;
+}
+
+
+
+.popup-registration__form {
+    padding: 40px 32px 32px 32px;
+    position: relative;
+    background-color: var(--main-white);
+    border-radius: 8px;
+}
+
+.popup-forgot-password__form {
+    padding: 40px 32px 32px 32px;
+    position: relative;
+    background-color: var(--main-white);
+    border-radius: 8px;
+}
+
 
 .popup-authorization__close-form {
     position: absolute;
-    right: 2px;
+    right: 16px;
     cursor: pointer;
+    top: 16px;
+}
+
+.popup-registration__close-form {
+    position: absolute;
+    right: 16px;
+    cursor: pointer;
+    top: 16px;
 }
 
 .popup-authorization__title {
@@ -1848,6 +1892,27 @@ section {
     margin-bottom: 4px;
 }
 
+.popup-registration__input input {
+    border: none;
+    outline: none;
+    border: 1px solid var(--gray-100);
+    border-radius: 8px;
+    width: 360px;
+    padding: 10px 12px;
+    gap: 8px;
+}
+
+.popup-forgot-password__input input {
+    border: none;
+    outline: none;
+    border: 1px solid var(--gray-100);
+    border-radius: 8px;
+    width: 360px;
+    padding: 10px 12px;
+    gap: 8px;
+    margin-bottom: 16px;
+}
+
 .popup-authorization__input input {
     border: none;
     outline: none;
@@ -1856,8 +1921,42 @@ section {
     width: 360px;
     padding: 10px 12px;
     gap: 8px;
-
+    margin-bottom: 4px;
 }
+
+.popup-registration__input input {
+    border: none;
+    outline: none;
+    border: 1px solid var(--gray-100);
+    border-radius: 8px;
+    width: 360px;
+    padding: 10px 12px;
+    gap: 8px;
+    margin-bottom: 4px;
+}
+
+.popup-registration__input-block-checkbox {
+    display: flex;
+    width: 360px;
+    margin-bottom: 16px;
+}
+
+
+
+.popup-registration__input-checkbox {
+    width: 14px;
+    height: 14px;
+    margin-right: 6px;
+}
+
+.popup-registration__input-checkbox__text {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 14px;
+    color: #18212C;
+}
+
+
 
 .popup-authorization__join-button {
     display: flex;
@@ -1887,9 +1986,45 @@ section {
     margin-bottom: 16px;
 }
 
+.popup-registration__input-block {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-bottom: 16px;
+}
+
+.popup-forgot-password__input-block {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-bottom: 16px;
+}
+
+
+
 .popup-authorization__block {
     display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
 }
+
+.popup-registration__block {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.popup-forgot-password__block {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+
+
 
 .popup-authorization__buttons-main {
     display: flex;
@@ -1913,6 +2048,50 @@ section {
     border-radius: 8px;
     width: 360px;
     justify-content: center;
+    align-items: center;
+}
+
+.popup-authorization__buttons-apple {
+    display: flex;
+    border: 1px solid var(--gray-100);
+    padding: 10px 12px;
+    border-radius: 8px;
+    width: 360px;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.popup-authorization__buttons-classmates {
+    display: flex;
+    border: 1px solid var(--gray-100);
+    padding: 10px 12px;
+    border-radius: 8px;
+    width: 360px;
+    justify-content: center;
+    align-items: center;
+}
+
+.popup-authorization__buttons-classmates svg {
+    margin-right: 6px;
+}
+
+.popup-authorization__apple-button {
+    color: var(--main-black);
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 18px;
+}
+
+.popup-authorization__classmates-button {
+    color: var(--main-black);
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 18px;
+}
+
+.popup-authorization__buttons-apple svg {
+    margin-right: 6px;
 }
 
 .popup-authorization__buttons-vk svg {
@@ -1924,6 +2103,47 @@ section {
     font-size: 14px;
     font-weight: 500;
     line-height: 18px;
+}
+
+.popup-authorization__error {
+    border: none;
+    outline: none;
+    border: 1px solid var(--main-red);
+    border-radius: 8px;
+    width: 360px;
+    padding: 10px 12px;
+    gap: 8px;
+
+}
+
+.popup-authorization__error-text svg {
+    margin-right: 6px;
+}
+
+.popup-registration__error-text svg {
+    margin-right: 6px;
+}
+
+.popup-authorization__error-text {
+    display: flex;
+    text-align: center;
+    align-items: center;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 14px;
+    color: var(--main-red);
+    display: none;
+}
+
+.popup-registration__error-text {
+    display: flex;
+    text-align: center;
+    align-items: center;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 14px;
+    color: var(--main-red);
+    display: none;
 }
 
 .popup-authorization__registration {
@@ -1940,6 +2160,133 @@ section {
     justify-content: center;
 
 }
+
+.popup-registration__btn {
+    color: var(--main-white);
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 18px;
+    width: 360px;
+    padding: 10px 20px;
+    border-radius: 8px;
+    gap: 6px;
+    border: 1px solid var(--main-accent);
+    background-color: var(--main-accent);
+    display: flex;
+    justify-content: center;
+    margin-bottom: 32px;
+}
+
+.popup-forgot-password__btn {
+    color: var(--main-white);
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 18px;
+    width: 360px;
+    padding: 10px 20px;
+    border-radius: 8px;
+    gap: 6px;
+    border: 1px solid var(--main-accent);
+    background-color: var(--main-accent);
+    display: flex;
+    justify-content: center;
+    
+}
+
+.popup-registration__btnLogin {
+    color: var(--main-accent);
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 18px;
+    width: 360px;
+    padding: 10px 20px;
+    border-radius: 8px;
+    gap: 6px;
+    border: 1px solid var(--main-accent);
+    display: flex;
+    justify-content: center;
+}
+
+.popup-registration__title {
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 36px;
+    color: var(--main-black);
+    margin-bottom: 16px;
+
+}
+
+.popup-registration__header {
+    display: flex;
+    flex-direction: column;
+}
+
+.popup-forgot-password__header {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 32px;
+}
+
+.popup-forgot-password__back-form {
+    margin-right: 8px;
+}
+
+.popup-forgot-password__close-form {
+    position: absolute;
+    right: 16px;
+    cursor: pointer;
+    top: 16px;
+}
+
+.popup-forgot-password__text {
+    color: #18212C;
+    line-height: 14px;
+    font-size: 12px;
+    width: 360px;
+}
+
+.popup-forgot-password__header-block {
+    display: flex;
+    align-items: center;
+    margin-bottom: 16px;
+
+}
+
+
+
+.popup-registration__input-title {
+    color: var(--main-black);
+    font-size: 14px;
+    line-height: 18px;
+    margin-bottom: 4px;
+}
+
+.popup-forgot-password__input-title {
+    color: var(--main-black);
+    font-size: 14px;
+    line-height: 18px;
+    margin-bottom: 4px;
+}
+
+.popup-registration__description {
+    color: var(--gray-700);
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 14px;
+    margin-bottom: 32px;
+    width: 360px;
+}
+
+
+body.active {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+}
+
 
 .main-info__card-authorized {
     padding: 20px;
