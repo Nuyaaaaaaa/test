@@ -88,6 +88,8 @@ jQuery(document).ready(function () {
       $(".popup-authorization").show();
     });
   });
+
+  //закрытие попапа забыл пароль и открытие попапа вход
   $(document).ready(function () {
     $(".popup-forgot-password__close-form").click(function () {
       $("body").addClass('active');
@@ -96,6 +98,32 @@ jQuery(document).ready(function () {
       $(".popup-authorization").show();
     });
   });
+  //show popup new-password
+  $(document).ready(function () {
+    $(".popup-reg-new-password__btn").click(function () {
+      $("body").addClass('active');
+      $(".popup").addClass('active');
+      $(".popup-reg-new-password").show();
+    });
+  });
+  //закрытие попапа новый пароль, открытие попапа восстановить пароль
+  $(document).ready(function () {
+    $(".popup-reg-new-password__close-form").click(function () {
+      $("body").addClass('active');
+      $(".popup").addClass('active');
+      $(".popup-reg-new-password").hide();
+      $(".popup-forgot-password").hide();
+    });
+  });
+   //открытие попапа регистрация при нажатии на кнопку зарегистрироваться в попапе вход
+   $(document).ready(function () {
+    $(".popup-authorization__registration").click(function () {
+      $(".popup-authorization").hide();
+      $(".popup-registration").show();
+    });
+  });
+
+
 });
 
 

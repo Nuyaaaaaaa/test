@@ -2193,6 +2193,21 @@ section {
     
 }
 
+.popup-reg-new-password__btn {
+    color: var(--main-white);
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 18px;
+    width: 360px;
+    padding: 10px 20px;
+    border-radius: 8px;
+    gap: 6px;
+    border: 1px solid var(--main-accent);
+    background-color: var(--main-accent);
+    display: flex;
+    justify-content: center;
+}
+
 .popup-registration__btnLogin {
     color: var(--main-accent);
     font-size: 14px;
@@ -2227,11 +2242,26 @@ section {
     margin-bottom: 32px;
 }
 
+.popup-reg-new-password__header {
+    display: flex;
+    flex-direction: column;
+}
+
 .popup-forgot-password__back-form {
     margin-right: 8px;
+    cursor: pointer;
 }
 
 .popup-forgot-password__close-form {
+    position: absolute;
+    right: 16px;
+    cursor: pointer;
+    top: 16px;
+}
+
+
+
+.popup-reg-new-password__close-form {
     position: absolute;
     right: 16px;
     cursor: pointer;
@@ -2252,6 +2282,20 @@ section {
 
 }
 
+.popup-forgot-password__title {
+    line-height: 22px;
+    color: var(--main-black);
+    font-size: 22px;
+    font-weight: 700;
+}
+
+.popup-reg-new-password__title {
+    line-height: 22px;
+    color: var(--main-black);
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 32px;
+}
 
 
 .popup-registration__input-title {
